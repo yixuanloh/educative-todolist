@@ -92,7 +92,7 @@ function App() {
                   </React.Fragment> :
                   (idSelected == item._id ? 
                     <React.Fragment>
-                      <input class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" value={todoitem} placeholder="Update Todo" onChange={(e) => setUpdatedItem(e.target.value)}></input>
+                      <input class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" value={updatedItem} placeholder="Update Todo" onChange={(e) => setUpdatedItem(e.target.value)}></input>
                       <button class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red" id={item._id} onClick={() => onUpdate(item._id, updatedItem)}>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="white" viewBox="0 0 24 24" stroke="green">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -106,7 +106,7 @@ function App() {
                     </React.Fragment> :
                     <React.Fragment>
                       <p class="w-full text-grey-darkest">{item.itemName}</p>
-                      <button class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red" onClick={() => setIsEdit(true) && setIdSelected(item._id)}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="white" viewBox="0 0 24 24" stroke="green">
+                      <button class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red" onClick={() => setBoth(item._id)}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="white" viewBox="0 0 24 24" stroke="green">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                       </svg></button>
                       <button class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red" onClick={() => onDelete(item._id)}><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="white" viewBox="0 0 24 24" stroke="red">
